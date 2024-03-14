@@ -10,7 +10,7 @@ namespace HRLeaveManagementApplication.Contracts.DataAccess
     {
         Task<T> CreateAsync(T entity);
         Task<T> UpdateAsync(T entity);
-        Task<T> DeleteAsync(int id);
+        Task<T> DeleteAsync(T entity);
         Task<List<T>> GetAllAsync();
         Task<T> GetByIdAsync(int id);
     }
