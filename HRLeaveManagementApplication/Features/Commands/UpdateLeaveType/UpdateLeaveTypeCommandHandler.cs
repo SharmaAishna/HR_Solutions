@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HRLeaveManagement.Domain;
 using HRLeaveManagementApplication.Contracts.DataAccess;
+using HRLeaveManagementApplication.Exceptions;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace HRLeaveManagementApplication.Features.Commands.UpdateLeaveType
         public async Task<Unit> Handle(UpdateLeaveTypeCommand request, CancellationToken cancellationToken)
         {
             //Validating incoming data
-
+            
             //convert to domain entity object
             var leaveTypeToUpdate = _mapper.Map<LeaveType>(request);
             //add to database
