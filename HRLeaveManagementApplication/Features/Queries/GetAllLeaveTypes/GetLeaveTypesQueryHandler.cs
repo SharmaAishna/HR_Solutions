@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HRLeaveManagementApplication.Contracts.DataAccess;
+using HRLeaveManagementApplication.Logging;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,15 @@ namespace HRLeaveManagementApplication.Features.Queries.GetAllLeaveTypes
     {
         private readonly IMapper _mapper;
         private readonly ILeaveTypeRepository _leaveTypeRepository;
+        private readonly IAppLogger<GetLeaveTypesQueryHandler> _logger;
 
-        public GetLeaveTypesQueryHandler(IMapper mapper, ILeaveTypeRepository leaveTypeRepository)
+        public GetLeaveTypesQueryHandler(IMapper mapper,
+            ILeaveTypeRepository leaveTypeRepository,
+            IAppLogger<GetLeaveTypesQueryHandler> logger)
         {
             _mapper = mapper;
             _leaveTypeRepository = leaveTypeRepository;
+            _logger = logger;
         }
 
 
@@ -30,7 +35,7 @@ namespace HRLeaveManagementApplication.Features.Queries.GetAllLeaveTypes
             var data = _mapper.Map<List<LeaveTypeDTO>>(leaveTypes);
 
             //return list of DTO object
-
+            _logger.LogInformation("Leave types were retrieved successfully");
             return data;
         }
     }

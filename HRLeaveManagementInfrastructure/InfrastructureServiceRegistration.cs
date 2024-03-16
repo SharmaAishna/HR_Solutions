@@ -1,6 +1,8 @@
 ﻿using HRLeaveManagementApplication.Contracts.Email;
+using HRLeaveManagementApplication.Logging;
 using HRLeaveManagementApplication.Models.EmailModels;
 using HRLeaveManagementInfrastructure.EmailService;
+using HRLeaveManagementInfrastructure.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -18,6 +20,7 @@ namespace HRLeaveManagementInfrastructure
         {
             services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
             return services;
         }
     }
