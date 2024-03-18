@@ -4,10 +4,21 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>9696c8c1-7bc1-4196-b008-d477ba247e85</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HRLeaveManagementApplication\HRLeaveManagementApplication.csproj" />
+    <ProjectReference Include="..\HRLeaveManagementInfrastructure\HRLeaveManagementInfrastructure.csproj" />
+    <ProjectReference Include="..\HRLeaveManagementPersistence\HRLeaveManagementPersistence.csproj" />
   </ItemGroup>
 
 </Project>

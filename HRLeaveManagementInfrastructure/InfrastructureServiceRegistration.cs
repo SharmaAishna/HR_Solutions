@@ -15,7 +15,7 @@ namespace HRLeaveManagementInfrastructure
 {
     public static class InfrastructureServiceRegistration
     {
-        public static IServiceCollection ConfigureInfrastructureServices(this IServiceCollection
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection
             services, IConfiguration configuration)
         {
             services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
