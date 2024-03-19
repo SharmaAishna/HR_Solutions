@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRLeaveManagementApplication.Features.Commands.CreateLeaveType
+namespace HRLeaveManagementApplication.Features.LeaveTypes.Commands.CreateLeaveType
 {
     public class CreateLeaveTypeCommandValidator : AbstractValidator<CreateLeaveTypeCommand>
     {
@@ -19,7 +19,7 @@ namespace HRLeaveManagementApplication.Features.Commands.CreateLeaveType
                 .NotNull()
                 .MaximumLength(70).WithMessage("{PropertyName} must be fewer than 70 characters");
 
-            RuleFor(p => p.DefaultDays)              
+            RuleFor(p => p.DefaultDays)
                .LessThan(100).WithMessage("{PropertyName} cannot exceed 100")
                .GreaterThan(1).WithMessage("{PropertyName} cannot be less than 1");
 

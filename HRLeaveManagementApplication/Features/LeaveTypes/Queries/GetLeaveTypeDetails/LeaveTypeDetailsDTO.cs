@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRLeaveManagementApplication.Features.Queries.GetLeaveTypeDetails
+namespace HRLeaveManagementApplication.Features.LeaveTypes.Queries.GetLeaveTypeDetails
 {
     public class LeaveTypeDetailsDTO
     {

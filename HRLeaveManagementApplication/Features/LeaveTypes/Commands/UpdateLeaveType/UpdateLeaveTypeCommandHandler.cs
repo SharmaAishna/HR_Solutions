@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRLeaveManagementApplication.Features.Commands.UpdateLeaveType
+namespace HRLeaveManagementApplication.Features.LeaveTypes.Commands.UpdateLeaveType
 {
     public class UpdateLeaveTypeCommandHandler : IRequestHandler<UpdateLeaveTypeCommand, Unit>
     {
@@ -30,9 +30,9 @@ namespace HRLeaveManagementApplication.Features.Commands.UpdateLeaveType
         {
             //Validating incoming data
             var validator = new UpdateLeaveTypeCommandValidator(_leaveTypeRepository);
-            var validationResult= await validator.ValidateAsync(request);
+            var validationResult = await validator.ValidateAsync(request);
 
-            if(validationResult.Errors.Any())
+            if (validationResult.Errors.Any())
             {
                 _logger.LogWarning("Validation errors in update request for {0} - {1}",
                     nameof(LeaveType),

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRLeaveManagementApplication.Features.Queries.GetAllLeaveTypes
+namespace HRLeaveManagementApplication.Features.LeaveTypes.Queries.GetAllLeaveTypes
 {
     public class GetLeaveTypesQueryHandler : IRequestHandler<GetLeaveTypesQuery, List<LeaveTypeDTO>>
     {

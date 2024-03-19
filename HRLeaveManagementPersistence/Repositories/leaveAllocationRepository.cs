@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HRLeaveManagementPersistence.Repositories
 {
-    public class leaveAllocationRepository : GenericRepository<LeaveAllocation>, ILeaveAlloactionRepository
+    public class LeaveAllocationRepository : GenericRepository<LeaveAllocation>, ILeaveAllocationRepository
     {
-        public leaveAllocationRepository(HrDatabaseContext context) : base(context)
+        public LeaveAllocationRepository(HrDatabaseContext context) : base(context)
         {
 
         }

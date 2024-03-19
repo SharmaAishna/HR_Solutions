@@ -23,7 +23,7 @@ namespace HRLeaveManagementPersistence
             services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
             services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
             services.AddScoped<ILeaveRequestRepository, LeaveRequestRepository>();
-            services.AddScoped<ILeaveAlloactionRepository, leaveAllocationRepository>();
+            services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
             return services;
         }
     }

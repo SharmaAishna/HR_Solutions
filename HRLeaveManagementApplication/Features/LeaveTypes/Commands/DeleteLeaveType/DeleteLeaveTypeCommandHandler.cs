@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRLeaveManagementApplication.Features.Commands.DeleteLeaveType
+namespace HRLeaveManagementApplication.Features.LeaveTypes.Commands.DeleteLeaveType
 {
     public class DeleteLeaveTypeCommandHandler : IRequestHandler<DeleteLeaveTypeCommand, Unit>
     {

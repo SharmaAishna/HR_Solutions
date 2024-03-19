@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRLeaveManagementApplication.Features.Commands.CreateLeaveType
+namespace HRLeaveManagementApplication.Features.LeaveTypes.Commands.CreateLeaveType
 {
     public class CreateLeaveTypeCommand : IRequest<int>
     {

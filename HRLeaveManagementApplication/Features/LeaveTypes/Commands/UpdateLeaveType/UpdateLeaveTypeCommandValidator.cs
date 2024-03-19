@@ -1,13 +1,12 @@
 ﻿using FluentValidation;
 using HRLeaveManagementApplication.Contracts.DataAccess;
-using HRLeaveManagementApplication.Features.Commands.CreateLeaveType;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRLeaveManagementApplication.Features.Commands.UpdateLeaveType
+namespace HRLeaveManagementApplication.Features.LeaveTypes.Commands.UpdateLeaveType
 {
     public class UpdateLeaveTypeCommandValidator : AbstractValidator<UpdateLeaveTypeCommand>
     {

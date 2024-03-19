@@ -2,7 +2,7 @@
 
 namespace HRLeaveManagementApplication.Contracts.DataAccess
 {
-    public interface ILeaveAlloactionRepository : IGenericRepository<LeaveAllocation>
+    public interface ILeaveAllocationRepository : IGenericRepository<LeaveAllocation>
     {
         Task<LeaveAllocation> GetLeaveAllocationWithDetails(int id);
         Task<List<LeaveAllocation>> GetLeaveAllocationWithDetails();

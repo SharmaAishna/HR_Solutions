@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRLeaveManagementApplication.Features.Commands.DeleteLeaveType
+namespace HRLeaveManagementApplication.Features.LeaveTypes.Commands.DeleteLeaveType
 {
-    public class DeleteLeaveTypeCommand:IRequest<Unit>
+    public class DeleteLeaveTypeCommand : IRequest<Unit>
     {
         public int Id { get; set; }
     }
