@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\LeaveAllocation\Commands\DeleteLeaveAllocation\" />
     <Folder Include="Features\LeaveRequest\Commands\" />
     <Folder Include="Features\LeaveRequest\Queries\" />
   </ItemGroup>
