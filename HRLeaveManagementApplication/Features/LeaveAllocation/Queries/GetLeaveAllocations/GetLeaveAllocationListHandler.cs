@@ -24,6 +24,7 @@ namespace HRLeaveManagementApplication.Features.LeaveAllocation.Queries.GetLeave
         {
             //To Add later
             //-Get records for specific user
+
             //-Get allocations per employee
 
             var leaveAllocations = await _leaveAlloactionRepository.GetLeaveAllocationWithDetails();

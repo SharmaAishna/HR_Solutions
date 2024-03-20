@@ -14,12 +14,12 @@ namespace HRLeaveManagementApplication.Features.LeaveAllocation.Commands.UpdateL
         private readonly IMapper _mapper;
         private readonly ILeaveTypeRepository _leaveTypeRepository;
         private readonly ILeaveAllocationRepository _leaveAllocationRepository;
-        private readonly IAppLogger<UpdateLeaveTypeCommandHandler> _logger;
+        private readonly IAppLogger<UpdateLeaveAllocationCommandHandler> _logger;
 
         public UpdateLeaveAllocationCommandHandler(IMapper mapper,
             ILeaveTypeRepository leaveTypeRepository,
             ILeaveAllocationRepository leaveAllocationRepository,
-            IAppLogger<UpdateLeaveTypeCommandHandler> logger)
+            IAppLogger<UpdateLeaveAllocationCommandHandler> logger)
         {
             _mapper = mapper;
             _leaveTypeRepository = leaveTypeRepository;
