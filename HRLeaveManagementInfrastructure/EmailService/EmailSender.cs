@@ -1,5 +1,5 @@
-﻿using HRLeaveManagementApplication.Contracts.Email;
-using HRLeaveManagementApplication.Models.EmailModels;
+﻿using HrLeaveManagement.Server.Contracts.Email;
+using HrLeaveManagement.Server.Models.EmailModels;
 using Microsoft.Extensions.Options;
 using SendGrid;
 using SendGrid.Helpers.Mail;

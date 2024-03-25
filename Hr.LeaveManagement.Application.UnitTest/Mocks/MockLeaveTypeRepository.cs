@@ -1,5 +1,5 @@
 ﻿using HRLeaveManagement.Domain;
-using HRLeaveManagementApplication.Contracts.DataAccess;
+using HrLeaveManagement.Server.Contracts.DataAccess;
 using Moq;
 using System;
 using System.Collections.Generic;

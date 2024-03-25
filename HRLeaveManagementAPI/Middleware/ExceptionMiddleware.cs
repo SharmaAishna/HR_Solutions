@@ -1,5 +1,5 @@
 ﻿using HRLeaveManagementAPI.Middleware.ProblemModels;
-using HRLeaveManagementApplication.Exceptions;
+using HrLeaveManagement.Server.Exceptions;
 using Newtonsoft.Json;
 using System.Net;
 

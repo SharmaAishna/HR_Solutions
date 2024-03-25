@@ -1,4 +1,4 @@
-﻿using HRLeaveManagementApplication.Logging;
+﻿using HrLeaveManagement.Server.Logging;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;

@@ -25,9 +25,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRLeaveManagementInfrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRLeaveManagementAPI", "HRLeaveManagementAPI\HRLeaveManagementAPI.csproj", "{FB538173-DE19-4FE8-AB51-D3AC779B3FFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hr.LeaveManagement.Application.UnitTest", "Hr.LeaveManagement.Application.UnitTest\Hr.LeaveManagement.Application.UnitTest.csproj", "{F4CEE2EF-82C6-4E0C-B601-ED9FCDCF79F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hr.LeaveManagement.Application.UnitTest", "Hr.LeaveManagement.Application.UnitTest\Hr.LeaveManagement.Application.UnitTest.csproj", "{F4CEE2EF-82C6-4E0C-B601-ED9FCDCF79F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HrLeaveManagement.DataAccess.IntegrationTest", "HrLeaveManagement.DataAccess.IntegrationTest\HrLeaveManagement.DataAccess.IntegrationTest.csproj", "{FCAA6901-B329-4EF2-9731-FD90A59E09FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HrLeaveManagement.DataAccess.IntegrationTest", "HrLeaveManagement.DataAccess.IntegrationTest\HrLeaveManagement.DataAccess.IntegrationTest.csproj", "{FCAA6901-B329-4EF2-9731-FD90A59E09FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HrLeaveManagementServer.Application", "HrLeaveManagementServer.Application", "{6A939D34-361F-4A84-AA0E-0F6AF02EABDB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HrLeaveManagement.Server", "HrLeaveManagement.Server\HrLeaveManagement.Server\HrLeaveManagement.Server.csproj", "{295637A3-D9D6-4F9F-BD20-8C5E50111947}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HrLeaveManagement.Server.Client", "HrLeaveManagement.Server\HrLeaveManagement.Server.Client\HrLeaveManagement.Server.Client.csproj", "{804BC0C0-2DF8-4F33-8A99-BBD7F7F7A08B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +69,14 @@ Global
 		{FCAA6901-B329-4EF2-9731-FD90A59E09FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCAA6901-B329-4EF2-9731-FD90A59E09FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCAA6901-B329-4EF2-9731-FD90A59E09FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{295637A3-D9D6-4F9F-BD20-8C5E50111947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295637A3-D9D6-4F9F-BD20-8C5E50111947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295637A3-D9D6-4F9F-BD20-8C5E50111947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295637A3-D9D6-4F9F-BD20-8C5E50111947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{804BC0C0-2DF8-4F33-8A99-BBD7F7F7A08B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804BC0C0-2DF8-4F33-8A99-BBD7F7F7A08B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804BC0C0-2DF8-4F33-8A99-BBD7F7F7A08B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804BC0C0-2DF8-4F33-8A99-BBD7F7F7A08B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +93,9 @@ Global
 		{FB538173-DE19-4FE8-AB51-D3AC779B3FFF} = {95220EF9-EBB1-44B1-AAC0-8781F3895540}
 		{F4CEE2EF-82C6-4E0C-B601-ED9FCDCF79F3} = {ADA5EB72-B7B5-405B-8959-79ADC10DE0F1}
 		{FCAA6901-B329-4EF2-9731-FD90A59E09FF} = {ADA5EB72-B7B5-405B-8959-79ADC10DE0F1}
+		{6A939D34-361F-4A84-AA0E-0F6AF02EABDB} = {19EF2D9F-25E5-4997-B9E5-616259DEE6A4}
+		{295637A3-D9D6-4F9F-BD20-8C5E50111947} = {6A939D34-361F-4A84-AA0E-0F6AF02EABDB}
+		{804BC0C0-2DF8-4F33-8A99-BBD7F7F7A08B} = {A28516AF-9D38-4AC4-AEB6-D7C3E93EB717}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {86F9A321-62C3-49AE-81E4-032CD04313B7}

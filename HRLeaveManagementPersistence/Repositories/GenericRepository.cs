@@ -1,5 +1,5 @@
 ﻿using HRLeaveManagement.Domain.Common;
-using HRLeaveManagementApplication.Contracts.DataAccess;
+using HrLeaveManagement.Server.Contracts.DataAccess;
 using HRLeaveManagementPersistence.DataBaseContext;
 using Microsoft.EntityFrameworkCore;
 using System;

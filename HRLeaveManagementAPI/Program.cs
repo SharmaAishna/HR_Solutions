@@ -1,5 +1,5 @@
 using HRLeaveManagementAPI.Middleware;
-using HRLeaveManagementApplication;
+using HrLeaveManagement.Server;
 using HRLeaveManagementInfrastructure;
 using HRLeaveManagementPersistence;
 

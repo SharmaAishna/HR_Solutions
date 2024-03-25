@@ -1,14 +1,14 @@
-﻿using HRLeaveManagementApplication.Features.LeaveAllocation.Commands.CreateLeaveAllocation;
-using HRLeaveManagementApplication.Features.LeaveAllocation.Commands.DeleteLeaveAllocation;
-using HRLeaveManagementApplication.Features.LeaveAllocation.Commands.UpdateLeaveAllocation;
-using HRLeaveManagementApplication.Features.LeaveAllocation.Queries.GetLeaveAllocationDetails;
-using HRLeaveManagementApplication.Features.LeaveAllocation.Queries.GetLeaveAllocations;
-using HRLeaveManagementApplication.Features.LeaveRequest.Commands.ChangeLeaveRequest;
-using HRLeaveManagementApplication.Features.LeaveRequest.Commands.CreateLeaveRequestCommand;
-using HRLeaveManagementApplication.Features.LeaveRequest.Commands.DeleteLeaveRequestCommand;
-using HRLeaveManagementApplication.Features.LeaveRequest.Commands.UpdateLeaveRequestCommand;
-using HRLeaveManagementApplication.Features.LeaveRequest.Queries.GetLeave_RequestDetail;
-using HRLeaveManagementApplication.Features.LeaveRequest.Queries.GetLeaveRequestList;
+﻿using HrLeaveManagement.Server.Features.LeaveAllocation.Commands.CreateLeaveAllocation;
+using HrLeaveManagement.Server.Features.LeaveAllocation.Commands.DeleteLeaveAllocation;
+using HrLeaveManagement.Server.Features.LeaveAllocation.Commands.UpdateLeaveAllocation;
+using HrLeaveManagement.Server.Features.LeaveAllocation.Queries.GetLeaveAllocationDetails;
+using HrLeaveManagement.Server.Features.LeaveAllocation.Queries.GetLeaveAllocations;
+using HrLeaveManagement.Server.Features.LeaveRequest.Commands.ChangeLeaveRequest;
+using HrLeaveManagement.Server.Features.LeaveRequest.Commands.CreateLeaveRequestCommand;
+using HrLeaveManagement.Server.Features.LeaveRequest.Commands.DeleteLeaveRequestCommand;
+using HrLeaveManagement.Server.Features.LeaveRequest.Commands.UpdateLeaveRequestCommand;
+using HrLeaveManagement.Server.Features.LeaveRequest.Queries.GetLeave_RequestDetail;
+using HrLeaveManagement.Server.Features.LeaveRequest.Queries.GetLeaveRequestList;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

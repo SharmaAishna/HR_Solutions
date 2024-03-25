@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Hr.LeaveManagement.Application.UnitTest.Mocks;
-using HRLeaveManagementApplication.Contracts.DataAccess;
-using HRLeaveManagementApplication.Features.LeaveTypes.Queries.GetAllLeaveTypes;
-using HRLeaveManagementApplication.Logging;
-using HRLeaveManagementApplication.MappingProfile;
+using HrLeaveManagement.Server.Contracts.DataAccess;
+using HrLeaveManagement.Server.Features.LeaveTypes.Queries.GetAllLeaveTypes;
+using HrLeaveManagement.Server.Logging;
+using HrLeaveManagement.Server.MappingProfile;
 using Moq;
 using Shouldly;
 using System;

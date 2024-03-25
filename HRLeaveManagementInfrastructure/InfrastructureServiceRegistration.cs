@@ -1,6 +1,6 @@
-﻿using HRLeaveManagementApplication.Contracts.Email;
-using HRLeaveManagementApplication.Logging;
-using HRLeaveManagementApplication.Models.EmailModels;
+﻿using HrLeaveManagement.Server.Contracts.Email;
+using HrLeaveManagement.Server.Logging;
+using HrLeaveManagement.Server.Models.EmailModels;
 using HRLeaveManagementInfrastructure.EmailService;
 using HRLeaveManagementInfrastructure.Logging;
 using Microsoft.Extensions.Configuration;

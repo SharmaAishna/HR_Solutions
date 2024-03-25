@@ -1,4 +1,4 @@
-﻿using HRLeaveManagementApplication.Contracts.DataAccess;
+﻿using HrLeaveManagement.Server.Contracts.DataAccess;
 using HRLeaveManagementPersistence.DataBaseContext;
 using HRLeaveManagementPersistence.Repositories;
 using Microsoft.EntityFrameworkCore;

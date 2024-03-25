@@ -1,14 +1,14 @@
 ﻿using HRLeaveManagement.Domain;
-using HRLeaveManagementApplication.Features.LeaveAllocation.Commands.CreateLeaveAllocation;
-using HRLeaveManagementApplication.Features.LeaveAllocation.Commands.DeleteLeaveAllocation;
-using HRLeaveManagementApplication.Features.LeaveAllocation.Commands.UpdateLeaveAllocation;
-using HRLeaveManagementApplication.Features.LeaveAllocation.Queries.GetLeaveAllocationDetails;
-using HRLeaveManagementApplication.Features.LeaveAllocation.Queries.GetLeaveAllocations;
-using HRLeaveManagementApplication.Features.LeaveTypes.Commands.CreateLeaveType;
-using HRLeaveManagementApplication.Features.LeaveTypes.Commands.DeleteLeaveType;
-using HRLeaveManagementApplication.Features.LeaveTypes.Commands.UpdateLeaveType;
-using HRLeaveManagementApplication.Features.LeaveTypes.Queries.GetAllLeaveTypes;
-using HRLeaveManagementApplication.Features.LeaveTypes.Queries.GetLeaveTypeDetails;
+using HrLeaveManagement.Server.Features.LeaveAllocation.Commands.CreateLeaveAllocation;
+using HrLeaveManagement.Server.Features.LeaveAllocation.Commands.DeleteLeaveAllocation;
+using HrLeaveManagement.Server.Features.LeaveAllocation.Commands.UpdateLeaveAllocation;
+using HrLeaveManagement.Server.Features.LeaveAllocation.Queries.GetLeaveAllocationDetails;
+using HrLeaveManagement.Server.Features.LeaveAllocation.Queries.GetLeaveAllocations;
+using HrLeaveManagement.Server.Features.LeaveTypes.Commands.CreateLeaveType;
+using HrLeaveManagement.Server.Features.LeaveTypes.Commands.DeleteLeaveType;
+using HrLeaveManagement.Server.Features.LeaveTypes.Commands.UpdateLeaveType;
+using HrLeaveManagement.Server.Features.LeaveTypes.Queries.GetAllLeaveTypes;
+using HrLeaveManagement.Server.Features.LeaveTypes.Queries.GetLeaveTypeDetails;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
