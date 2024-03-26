@@ -40,7 +40,7 @@ namespace HRLeaveManagementAPI.Controllers
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
-        public async Task<ActionResult> Post(CreateLeaveTypeCommand leaveType)
+        public async Task<ActionResult<int>> Post(CreateLeaveTypeCommand leaveType)
         {
             var response=await _mediator.Send(leaveType);
             return CreatedAtAction(nameof(Get), new { id = response });
