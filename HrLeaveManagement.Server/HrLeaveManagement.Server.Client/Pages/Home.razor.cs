@@ -6,13 +6,13 @@ namespace HrLeaveManagement.Server.Client.Pages
 {
     public partial class Home
     {
-        [Inject] public NavigationManager _NavigationManager { get; set; }
+        [Inject] public NavigationManager NavigationManager { get; set; }
         [Inject] public ILeaveTypeService LeaveTypeService { get; set; }
         public string Message { get; set; } = string.Empty;
         public List<LeaveTypeVM> LeaveTypes { get; private set; }
         protected void CreateLeaveType()
         {
-            _NavigationManager.NavigateTo("/leavetypes/create/");
+            NavigationManager.NavigateTo("/leavetypes/create/");
         }
         protected void AllocateLeaveType(int id)
         {
@@ -20,7 +20,7 @@ namespace HrLeaveManagement.Server.Client.Pages
         }
         protected void DetailsLeaveType(int id)
         {
-            _NavigationManager.NavigateTo($"/leavetypes/details/{id}");
+            NavigationManager.NavigateTo($"/leavetypes/details/{id}");
         }
         protected async Task DeleteLeaveType(int id)
         {
@@ -36,7 +36,7 @@ namespace HrLeaveManagement.Server.Client.Pages
         }
         protected void EditLeaveType(int id)
         {
-            _NavigationManager.NavigateTo($"/leavetypes/edit/{id}");
+            NavigationManager.NavigateTo($"/leavetypes/edit/{id}");
         }
 
         protected override async Task OnInitializedAsync()

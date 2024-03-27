@@ -37,11 +37,7 @@ namespace HRLeaveManagementApplication.Features.LeaveRequest.Commands.CancelLeav
         }
         public async Task<Unit> Handle(ChangeLeaveRequestApprovalCommand request, CancellationToken cancellationToken)
         {
-            var leaveRequest= await _leaveRequestRepository.GetByIdAsync(request.Id);   
-            if (leaveRequest == null)
-            {
-                throw new NotFoundException(nameof(LeaveRequest), request.Id);
-            }
+            var leaveRequest= await _leaveRequestRepository.GetByIdAsync(request.Id) ?? throw new NotFoundException(nameof(LeaveRequest), request.Id);
             leaveRequest.Approved = request.Approved;
             await _leaveRequestRepository.UpdateAsync(leaveRequest);
 

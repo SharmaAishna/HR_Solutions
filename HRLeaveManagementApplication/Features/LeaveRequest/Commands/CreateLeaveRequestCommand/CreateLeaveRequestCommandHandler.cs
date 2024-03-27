@@ -35,7 +35,7 @@ namespace HRLeaveManagementApplication.Features.LeaveRequest.Commands.CreateLeav
         {
             //Validating incoming data
             var validator = new CreateLeaveRequestCommandValidator(_leaveTypeRepository);
-            var validationResult = await validator.ValidateAsync(request);
+            var validationResult = await validator.ValidateAsync(request, cancellationToken);
 
             if (validationResult.Errors.Any())
                 throw new BadRequestException("Invalid Leave Request", validationResult);
