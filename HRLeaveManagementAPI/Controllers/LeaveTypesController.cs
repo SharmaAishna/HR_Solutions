@@ -24,7 +24,7 @@ namespace HRLeaveManagementAPI.Controllers
         [HttpGet]
         public async Task<List<LeaveTypeDTO>> Get()
         {
-            var leaveTypes=await _mediator.Send(new GetLeaveTypesQuery());
+            var leaveTypes = await _mediator.Send(new GetLeaveTypesQuery());
             return leaveTypes;
         }
 
@@ -42,7 +42,7 @@ namespace HRLeaveManagementAPI.Controllers
         [ProducesResponseType(400)]
         public async Task<ActionResult<int>> Post(CreateLeaveTypeCommand leaveType)
         {
-            var response=await _mediator.Send(leaveType);
+            var response = await _mediator.Send(leaveType);
             return CreatedAtAction(nameof(Get), new { id = response });
         }
 
@@ -66,7 +66,7 @@ namespace HRLeaveManagementAPI.Controllers
         [ProducesDefaultResponseType]
         public async Task<ActionResult> Delete(int id)
         {
-            var command= new DeleteLeaveTypeCommand { Id = id };
+            var command = new DeleteLeaveTypeCommand { Id = id };
             await _mediator.Send(command);
             return NoContent();
         }

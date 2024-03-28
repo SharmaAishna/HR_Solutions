@@ -16,7 +16,7 @@ namespace HRLeaveManagementAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LeaveRequestsController : Controller
+    public class LeaveRequestsController : ControllerBase
     {
         private readonly IMediator _mediator;
         public LeaveRequestsController(IMediator mediator)

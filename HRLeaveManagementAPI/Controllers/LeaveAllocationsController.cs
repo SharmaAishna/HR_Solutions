@@ -4,11 +4,6 @@ using HrLeaveManagement.Server.Features.LeaveAllocation.Commands.DeleteLeaveAllo
 using HrLeaveManagement.Server.Features.LeaveAllocation.Commands.UpdateLeaveAllocation;
 using HrLeaveManagement.Server.Features.LeaveAllocation.Queries.GetLeaveAllocationDetails;
 using HrLeaveManagement.Server.Features.LeaveAllocation.Queries.GetLeaveAllocations;
-using HrLeaveManagement.Server.Features.LeaveTypes.Commands.CreateLeaveType;
-using HrLeaveManagement.Server.Features.LeaveTypes.Commands.DeleteLeaveType;
-using HrLeaveManagement.Server.Features.LeaveTypes.Commands.UpdateLeaveType;
-using HrLeaveManagement.Server.Features.LeaveTypes.Queries.GetAllLeaveTypes;
-using HrLeaveManagement.Server.Features.LeaveTypes.Queries.GetLeaveTypeDetails;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +11,7 @@ namespace HRLeaveManagementAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LeaveAllocationsController : Controller
+    public class LeaveAllocationsController : ControllerBase
     {
         private readonly IMediator _mediator;
 
