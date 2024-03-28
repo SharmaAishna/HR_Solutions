@@ -9,6 +9,6 @@ namespace HrLeaveManagement.Server.Contracts.Email
 {
     public interface IEmailSender
     {
-        Task<bool> SendEmail(EmailMessage email);
+        public Task<bool> SendEmail(EmailMessage email);
     }
 }

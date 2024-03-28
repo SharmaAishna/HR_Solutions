@@ -5,10 +5,10 @@ namespace HrLeaveManagement.Server.Client.Contracts
 {
     public interface ILeaveTypeService
     {
-        Task<List<LeaveTypeVM>> GetLeaveTypes();
-        Task<LeaveTypeVM> GetLeaveTypeDetails(int id);
-        Task<Response<Guid>> CreateLeaveType(LeaveTypeVM leaveType);
-        Task<Response<Guid>> UpdateLeaveType(int id, LeaveTypeVM leaveType);
-        Task<Response<Guid>> DeleteLeaveType(int id);
+        public Task<List<LeaveTypeVM>> GetLeaveTypes();
+        public Task<LeaveTypeVM> GetLeaveTypeDetails(int id);
+        public Task<Response<Guid>> CreateLeaveType(LeaveTypeVM leaveType);
+        public Task<Response<Guid>> UpdateLeaveType(int id, LeaveTypeVM leaveType);
+        public Task<Response<Guid>> DeleteLeaveType(int id);
     }
 }

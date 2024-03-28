@@ -1,3 +1,4 @@
+
 using HrLeaveManagement.Server.Client.Contracts;
 using HrLeaveManagement.Server.Client.Models.LeaveTypes;
 using Microsoft.AspNetCore.Components;
@@ -6,10 +7,12 @@ namespace HrLeaveManagement.Server.Client.Pages
 {
     public partial class Home
     {
-        [Inject] public NavigationManager NavigationManager { get; set; }
-        [Inject] public ILeaveTypeService LeaveTypeService { get; set; }
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
+        [Inject]
+        public ILeaveTypeService LeaveTypeService { get; set; }
         public string Message { get; set; } = string.Empty;
-        public List<LeaveTypeVM> LeaveTypes { get; private set; }
+        public List<LeaveTypeVM> LeaveTypes { get; private set;}
         protected void CreateLeaveType()
         {
             NavigationManager.NavigateTo("/leavetypes/create/");
@@ -41,7 +44,9 @@ namespace HrLeaveManagement.Server.Client.Pages
 
         protected override async Task OnInitializedAsync()
         {
+            StateHasChanged();
             LeaveTypes = await LeaveTypeService.GetLeaveTypes();
+            StateHasChanged();
         }
     }
 }

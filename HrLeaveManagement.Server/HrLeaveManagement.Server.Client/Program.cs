@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using System.Reflection;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
-builder.Services.AddHttpClient<IClient, Client>(client => client.BaseAddress = new Uri("https://localhost:7249"));
+builder.Services.AddHttpClient<IClient, Client>
+    (client => client.BaseAddress = new Uri("https://localhost:7249"));
 builder.Services.AddScoped<ILeaveTypeService, LeaveTypeService>();
 builder.Services.AddScoped<ILeaveRequestService,LeaveRequestService>();
 builder.Services.AddScoped<ILeaveAllocationService, LeaveAllocationService>();  

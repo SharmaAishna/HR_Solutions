@@ -5,7 +5,7 @@ namespace HrLeaveManagement.Server.Contracts.Identity
 {
     public interface IAuthService
     {
-        Task<AuthResponse> Login(AuthRequest request);
-        Task<RegistrationResponse> Register(RegistrationRequest request);
+        public Task<AuthResponse> Login(AuthRequest request);
+        public Task<RegistrationResponse> Register(RegistrationRequest request);
     }
 }

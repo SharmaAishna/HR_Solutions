@@ -11,7 +11,7 @@
         {
             if (ex.StatusCode == 400)
             {
-                return new Response<Guid>
+                return new Response<Guid>()
                 {
                     Message = "Invalid data was submitted",
                     ValidationErrors = ex.Response,
