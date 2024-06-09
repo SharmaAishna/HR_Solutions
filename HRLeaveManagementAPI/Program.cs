@@ -4,7 +4,6 @@ using HRLeaveManagementInfrastructure;
 using HRLeaveManagementPersistence;
 using HRLeavemanagement.Identity;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

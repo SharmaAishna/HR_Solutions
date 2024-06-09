@@ -2,11 +2,6 @@
 using HrLeaveManagement.Server.Contracts.DataAccess;
 using HRLeaveManagementPersistence.DataBaseContext;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HRLeaveManagementPersistence.Repositories
 {
@@ -16,10 +11,10 @@ namespace HRLeaveManagementPersistence.Repositories
         {
 
         }
-
+       
         public async Task<bool> IsLeaveTypeUnique(string name)
         {
-            return await _context.LeaveTypes.AnyAsync(t => t.Name == name)==false;
+            return await _context.LeaveTypes.AnyAsync(t => t.Name == name) == false;
         }
     }
 }

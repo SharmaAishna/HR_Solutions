@@ -10,9 +10,9 @@ namespace HrLeaveManagement.Server.Client.Pages
         [Inject]
         public NavigationManager NavigationManager { get; set; }
         [Inject]
-        public ILeaveTypeService LeaveTypeService { get; set; }
+        public ILeaveTypeService LeaveTypeService { get; set; } 
         public string Message { get; set; } = string.Empty;
-        public List<LeaveTypeVM> LeaveTypes { get; private set;}
+        public List<LeaveTypeVM> LeaveTypes { get; private set; } 
         protected void CreateLeaveType()
         {
             NavigationManager.NavigateTo("/leavetypes/create/");

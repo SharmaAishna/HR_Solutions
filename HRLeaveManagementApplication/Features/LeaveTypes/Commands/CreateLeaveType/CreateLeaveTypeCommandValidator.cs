@@ -1,10 +1,5 @@
 ﻿using FluentValidation;
 using HRLeaveManagementApplication.Contracts.DataAccess;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HRLeaveManagementApplication.Features.LeaveTypes.Commands.CreateLeaveType
 {
@@ -23,7 +18,7 @@ namespace HRLeaveManagementApplication.Features.LeaveTypes.Commands.CreateLeaveT
                .LessThan(100).WithMessage("{PropertyName} cannot exceed 100")
                .GreaterThan(1).WithMessage("{PropertyName} cannot be less than 1");
 
-            RuleFor(p => p)
+            RuleFor(q => q)
                 .MustAsync(LeaveTypeNameUnique)
                 .WithMessage("Leave Type already exists.");
 

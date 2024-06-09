@@ -1,6 +1,6 @@
-using HrLeaveManagement.Server.Client.Pages;
-using HrLeaveManagement.Server.Client.Services.Base;
+
 using HrLeaveManagement.Server.Components;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 

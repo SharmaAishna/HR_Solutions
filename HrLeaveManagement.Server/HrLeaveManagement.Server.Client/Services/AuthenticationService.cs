@@ -19,7 +19,7 @@ namespace HrLeaveManagement.Server.Client.Services
             throw new NotImplementedException();
         }
 
-        public Task<bool> RegisterAsync(string firstName, string lastName, string email, string password)
+        public Task<bool> RegisterAsync(string firstName, string lastName, string userName, string email, string password)
         {
             throw new NotImplementedException();
         }
