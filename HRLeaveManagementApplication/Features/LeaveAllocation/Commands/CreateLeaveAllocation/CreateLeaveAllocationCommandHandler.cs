@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HRLeaveManagementApplication.Contracts.DataAccess;
 using HRLeaveManagementApplication.Exceptions;
+
 using MediatR;
 
 namespace HRLeaveManagementApplication.Features.LeaveAllocation.Commands.CreateLeaveAllocation

@@ -3,7 +3,8 @@ using HRLeaveManagementApplication.Contracts.DataAccess;
 using HRLeaveManagementApplication.Features.LeaveAllocation.Queries.GetLeaveAllocationDetails;
 using MediatR;
 
-public class GetLeaveAllocationDetailRequestHandler : IRequestHandler<GetLeaveAllocationDetailQuery, LeaveAllocationDetailsDTO>
+public class GetLeaveAllocationDetailRequestHandler :
+    IRequestHandler<GetLeaveAllocationDetailQuery, LeaveAllocationDetailsDTO>
 {
     private readonly ILeaveAllocationRepository _leaveAlloactionRepository;
     private readonly IMapper _mapper;

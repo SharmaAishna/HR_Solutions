@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
-using HRLeaveManagement.Domain;
 using HRLeaveManagementApplication.Contracts.DataAccess;
 using HRLeaveManagementApplication.Contracts.Email;
 using HRLeaveManagementApplication.Exceptions;
-using HRLeaveManagementApplication.Features.LeaveTypes.Commands.UpdateLeaveType;
 using HRLeaveManagementApplication.Logging;
 using HRLeaveManagementApplication.Models.EmailModels;
 using MediatR;

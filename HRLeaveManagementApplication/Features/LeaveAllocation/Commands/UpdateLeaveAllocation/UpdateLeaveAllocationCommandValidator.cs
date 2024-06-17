@@ -32,8 +32,8 @@ namespace HRLeaveManagementApplication.Features.LeaveAllocation.Commands.UpdateL
 
         private async Task<bool> LeaveAllocationMustExist(int id, CancellationToken token)
         {
-            var leaveType = await _leaveAllocationRepository.GetByIdAsync(id);
-            return leaveType != null;
+            var leavAllocation = await _leaveAllocationRepository.GetByIdAsync(id);
+            return leavAllocation != null;
         }
 
         private async Task<bool> LeaveTypeMustExist(int id, CancellationToken token)

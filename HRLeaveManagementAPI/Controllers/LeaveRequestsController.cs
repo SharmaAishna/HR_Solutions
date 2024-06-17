@@ -1,9 +1,4 @@
-﻿using HrLeaveManagement.Server.Features.LeaveAllocation.Commands.CreateLeaveAllocation;
-using HrLeaveManagement.Server.Features.LeaveAllocation.Commands.DeleteLeaveAllocation;
-using HrLeaveManagement.Server.Features.LeaveAllocation.Commands.UpdateLeaveAllocation;
-using HrLeaveManagement.Server.Features.LeaveAllocation.Queries.GetLeaveAllocationDetails;
-using HrLeaveManagement.Server.Features.LeaveAllocation.Queries.GetLeaveAllocations;
-using HrLeaveManagement.Server.Features.LeaveRequest.Commands.ChangeLeaveRequest;
+﻿using HrLeaveManagement.Server.Features.LeaveRequest.Commands.ChangeLeaveRequest;
 using HrLeaveManagement.Server.Features.LeaveRequest.Commands.CreateLeaveRequestCommand;
 using HrLeaveManagement.Server.Features.LeaveRequest.Commands.DeleteLeaveRequestCommand;
 using HrLeaveManagement.Server.Features.LeaveRequest.Commands.UpdateLeaveRequestCommand;

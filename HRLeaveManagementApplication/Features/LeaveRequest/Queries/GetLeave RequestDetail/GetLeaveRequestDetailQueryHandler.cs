@@ -24,8 +24,8 @@ namespace HRLeaveManagementApplication.Features.LeaveRequest.Queries.GetLeave_Re
             CancellationToken cancellationToken)
         {
             //Query the database
-            var leaveRequest = _mapper.Map < LeaveRequestDetailsDTO > (
-                await _leaveRequestRepository.GetByIdAsync(request.Id));
+            var leaveRequest = _mapper.Map<LeaveRequestDetailsDTO>(
+                await _leaveRequestRepository.GetLeaveRequestWithDetails(request.Id));
 
             //verify that record exists.
             if (leaveRequest == null)
@@ -33,6 +33,7 @@ namespace HRLeaveManagementApplication.Features.LeaveRequest.Queries.GetLeave_Re
                 throw new NotFoundException(nameof(LeaveType), request.Id);
             }
            //Add Employee Details as needed
+
             return leaveRequest;
         }
     }

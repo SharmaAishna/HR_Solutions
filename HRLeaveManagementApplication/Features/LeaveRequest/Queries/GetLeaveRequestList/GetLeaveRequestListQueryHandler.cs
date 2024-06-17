@@ -6,13 +6,13 @@ using MediatR;
 
 namespace HRLeaveManagementApplication.Features.LeaveRequest.Queries.GetLeaveRequestList
 {
-    public class GetLeaveRequestQueryHandler : IRequestHandler<GetLeaveRequestListQuery, List<LeaveRequestListDTO>>
+    public class GetLeaveRequestListQueryHandler : IRequestHandler<GetLeaveRequestListQuery, List<LeaveRequestListDTO>>
     {
         private readonly IMapper _mapper;
         private readonly ILeaveRequestRepository _leaveRequestRepository;
         private readonly IAppLogger<GetLeaveTypesQueryHandler> _logger;
 
-        public GetLeaveRequestQueryHandler(IMapper mapper,
+        public GetLeaveRequestListQueryHandler(IMapper mapper,
             ILeaveRequestRepository leaveRequestRepository,
             IAppLogger<GetLeaveTypesQueryHandler> logger)
         {
@@ -27,16 +27,16 @@ namespace HRLeaveManagementApplication.Features.LeaveRequest.Queries.GetLeaveReq
             //Check if it is logged in employee
 
             //Query the database
-            var leaveRequest = await _leaveRequestRepository.GetAllAsync();
+            var leaveRequest = await _leaveRequestRepository.GetLeaveRequestWithDetails();
 
             //convert data objects to DTO objects
-            var data = _mapper.Map<List<LeaveRequestListDTO>>(leaveRequest);
+            var requests = _mapper.Map<List<LeaveRequestListDTO>>(leaveRequest);
 
             //Fill requests with employee information
 
             //return list of DTO object
             _logger.LogInformation("Leave Request were retrieved successfully");
-            return data;
+            return requests;
         }
     }
 }

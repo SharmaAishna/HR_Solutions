@@ -44,7 +44,8 @@ namespace HRLeaveManagementPersistence.Repositories
 
         public async Task<List<LeaveAllocation>> GetLeaveAllocationWithDetails(string userId)
         {
-            var leaveAllocations = await _context.LeaveAllocations.Where(q => q.EmployeeId == userId)
+            var leaveAllocations = await _context.LeaveAllocations
+                .Where(q => q.EmployeeId == userId)
                  .Include(q => q.LeaveType)
                  .ToListAsync();
             return leaveAllocations;
@@ -52,8 +53,9 @@ namespace HRLeaveManagementPersistence.Repositories
 
         public async Task<LeaveAllocation> GetUserAllocations(string userId, int leaveTypeId)
         {
-            return await _context.LeaveAllocations.FirstOrDefaultAsync(
-                q => q.EmployeeId == userId
+            return await _context.LeaveAllocations
+                .FirstOrDefaultAsync(
+q => q.EmployeeId == userId
                 && q.LeaveTypeId == leaveTypeId);
         }
     }
