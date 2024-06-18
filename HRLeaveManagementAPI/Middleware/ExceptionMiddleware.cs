@@ -8,6 +8,7 @@ namespace HRLeaveManagementAPI.Middleware
 {
     public class ExceptionMiddleware
     {
+        //it intercept what next gonna happen
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionMiddleware> _logger;
 
@@ -36,6 +37,7 @@ namespace HRLeaveManagementAPI.Middleware
             switch (ex)
             {
                 case BadRequestException badRequestException:
+
                     statusCode = HttpStatusCode.BadRequest;
                     problem = new CustomProblemDetails
                     {
@@ -43,11 +45,13 @@ namespace HRLeaveManagementAPI.Middleware
                         Status = (int)statusCode,
                         Detail = badRequestException.InnerException?.Message,
                         Type = nameof(BadRequestException),
-                      //  Errors = badRequestException.ValidationErrors
+                      // Errors = badRequestException.ValidationErrors
                     };
+
                     break;
 
                 case NotFoundException NotFound:
+
                     statusCode = HttpStatusCode.NotFound;
                     problem = new CustomProblemDetails
                     {
@@ -56,9 +60,11 @@ namespace HRLeaveManagementAPI.Middleware
                         Type = nameof(NotFoundException),
                         Detail = NotFound.InnerException?.Message,
                     };
+
                     break;
 
                 default:
+
                     problem = new CustomProblemDetails
                     {
                         Title = ex.Message,

@@ -63,7 +63,8 @@ namespace HRLeaveManagementApplication.Features.LeaveRequest.Commands.UpdateLeav
                 var email = new EmailMessage
                 {
                     To = string.Empty,/*Get email from employee record*/
-                    Body = $"Your leave request for {request.StartDate:D} to {request.EndDate} " + "$ has been updated successfully.",
+                    Body = $"Your leave request for {request.StartDate:D} to {request.EndDate:D} " 
+                    + "$ has been updated successfully.",
                     Subject = "Leave Request Updated"
                 };
                 await _emailSender.SendEmail(email);

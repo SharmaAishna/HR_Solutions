@@ -35,7 +35,7 @@ namespace HRLeaveManagementApplication.Features.LeaveRequest.Commands.CreateLeav
         {
             //Validating incoming data
             var validator = new CreateLeaveRequestCommandValidator(_leaveTypeRepository);
-            var validationResult = await validator.ValidateAsync(request, cancellationToken);
+            var validationResult = await validator.ValidateAsync(request);
 
             if (validationResult.Errors.Any())
                 throw new BadRequestException("Invalid Leave Request", validationResult);
@@ -58,7 +58,7 @@ namespace HRLeaveManagementApplication.Features.LeaveRequest.Commands.CreateLeav
                 var email = new EmailMessage
                 {
                     To = string.Empty,/*Get email from employee record*/
-                    Body = $"Your leave request for {request.StartDate:D} to {request.EndDate} " + "$ has been submitted successfully.",
+                    Body = $"Your leave request for {request.StartDate:D} to {request.EndDate:D} " + "$ has been submitted successfully.",
                     Subject = "Leave Request Submitted"
                 };
                 await _emailSender.SendEmail(email);

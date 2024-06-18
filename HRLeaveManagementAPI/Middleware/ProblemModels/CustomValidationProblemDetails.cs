@@ -2,8 +2,8 @@
 
 namespace HRLeaveManagementAPI.Middleware.ProblemModels
 {
-    public class CustomProblemDetails:ProblemDetails
+    public class CustomProblemDetails : ProblemDetails
     {
-      public  IDictionary<string, string> Errors { get; set; }= new Dictionary<string, string>();
+        public IDictionary<string, string[]> Errors { get; set; } = new Dictionary<string, string[]>();
     }
 }

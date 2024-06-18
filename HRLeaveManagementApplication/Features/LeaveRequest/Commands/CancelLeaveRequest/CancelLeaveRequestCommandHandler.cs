@@ -9,13 +9,13 @@ using MediatR;
 
 namespace HRLeaveManagementApplication.Features.LeaveRequest.Commands.CancelLeaveRequest
 {
-    public class CanceLeaveRequestCommandHandler : IRequestHandler<CancelLeaveRequestCommand, Unit>
+    public class CancelLeaveRequestCommandHandler : IRequestHandler<CancelLeaveRequestCommand, Unit>
     {
         private readonly ILeaveRequestRepository _leaveRequestRepository;
         private readonly IEmailSender _emailSender;
         private readonly IAppLogger<CreateLeaveRequestCommandHandler> _logger;
 
-        public CanceLeaveRequestCommandHandler(
+        public CancelLeaveRequestCommandHandler(
             ILeaveRequestRepository leaveRequestRepository,
             IEmailSender emailSender,
             IAppLogger<CreateLeaveRequestCommandHandler> logger)
@@ -42,7 +42,7 @@ namespace HRLeaveManagementApplication.Features.LeaveRequest.Commands.CancelLeav
                 var email = new EmailMessage
                 {
                     To = string.Empty,/*Get email from employee record*/
-                    Body = $"Your leave request for {request.StartDate:D} to {request.EndDate} " + "$ has been cancelled successfully.",
+                    Body = $"Your leave request for {request.StartDate:D} to {request.EndDate:D} " + "$ has been cancelled successfully.",
                     Subject = "Leave Request Cancelled"
                 };
                 await _emailSender.SendEmail(email);

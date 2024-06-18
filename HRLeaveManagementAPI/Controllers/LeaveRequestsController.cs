@@ -1,4 +1,5 @@
-﻿using HrLeaveManagement.Server.Features.LeaveRequest.Commands.ChangeLeaveRequest;
+﻿using HrLeaveManagement.Server.Features.LeaveRequest.Commands.CancelLeaveRequest;
+using HrLeaveManagement.Server.Features.LeaveRequest.Commands.ChangeLeaveRequest;
 using HrLeaveManagement.Server.Features.LeaveRequest.Commands.CreateLeaveRequestCommand;
 using HrLeaveManagement.Server.Features.LeaveRequest.Commands.DeleteLeaveRequestCommand;
 using HrLeaveManagement.Server.Features.LeaveRequest.Commands.UpdateLeaveRequestCommand;
@@ -77,7 +78,7 @@ namespace HRLeaveManagementAPI.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult> CancelRequest(ChangeLeaveRequestApprovalCommand cancelLeaveRequest)
+        public async Task<ActionResult> CancelRequest(CancelLeaveRequestCommand cancelLeaveRequest)
         {
             await _mediator.Send(cancelLeaveRequest);
             return NoContent();
@@ -90,9 +91,9 @@ namespace HRLeaveManagementAPI.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult> UpdateRequest(ChangeLeaveRequestApprovalCommand cancelLeaveRequest)
+        public async Task<ActionResult> UpdateApproval(ChangeLeaveRequestApprovalCommand updateApprovalRequest)
         {
-            await _mediator.Send(cancelLeaveRequest);
+            await _mediator.Send(updateApprovalRequest);
             return NoContent();
         }
     }

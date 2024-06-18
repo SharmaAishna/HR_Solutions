@@ -3,17 +3,12 @@ using HRLeaveManagementApplication.Contracts.DataAccess;
 using HRLeaveManagementApplication.Contracts.Email;
 using HRLeaveManagementApplication.Exceptions;
 using HRLeaveManagementApplication.Features.LeaveRequest.Commands.ChangeLeaveRequest;
-using HRLeaveManagementApplication.Features.LeaveRequest.Commands.CreateLeaveRequestCommand;
 using HRLeaveManagementApplication.Logging;
 using HRLeaveManagementApplication.Models.EmailModels;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace HRLeaveManagementApplication.Features.LeaveRequest.Commands.CancelLeaveRequest
+
+namespace HRLeaveManagementApplication.Features.LeaveRequest.Commands.ChangeLeaveRequestApproval
 {
     public class ChangeLeaveRequestApprovalCommandHandler : IRequestHandler<ChangeLeaveRequestApprovalCommand, Unit>
     {
@@ -37,7 +32,8 @@ namespace HRLeaveManagementApplication.Features.LeaveRequest.Commands.CancelLeav
         }
         public async Task<Unit> Handle(ChangeLeaveRequestApprovalCommand request, CancellationToken cancellationToken)
         {
-            var leaveRequest= await _leaveRequestRepository.GetByIdAsync(request.Id) ?? throw new NotFoundException(nameof(LeaveRequest), request.Id);
+            var leaveRequest = await _leaveRequestRepository.GetByIdAsync(request.Id) ?? throw new NotFoundException(nameof(LeaveRequest), request.Id);
+           
             leaveRequest.Approved = request.Approved;
             await _leaveRequestRepository.UpdateAsync(leaveRequest);
 
@@ -45,10 +41,11 @@ namespace HRLeaveManagementApplication.Features.LeaveRequest.Commands.CancelLeav
 
             try
             {
+                //send confirmation email
                 var email = new EmailMessage
                 {
                     To = string.Empty,/*Get email from employee record*/
-                    Body = $"The approval status for your leave request for {request.StartDate:D} to {request.EndDate} " + "$ has been updated.",
+                    Body = $"The approval status for your leave request for {request.StartDate:D} to {request.EndDate:D} " + "$ has been updated.",
                     Subject = "Leave Request Approval Status Updated"
                 };
                 await _emailSender.SendEmail(email);
