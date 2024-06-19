@@ -1,7 +1,6 @@
-﻿using HrLeaveManagement.Server.Models.Identity;
-using Microsoft.AspNetCore.Authentication.OAuth;
+﻿using HRLeaveManagementApplication.Models.Identity;
 
-namespace HrLeaveManagement.Server.Contracts.Identity
+namespace HRLeaveManagementApplication.Contracts.Identity
 {
     public interface IAuthService
     {

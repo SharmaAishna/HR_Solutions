@@ -1,12 +1,19 @@
-﻿namespace HrLeaveManagement.Server.Client.Services.Base
+﻿using Blazored.LocalStorage;
+
+namespace HrLeaveManagement.Server.Client.Services.Base
 {
     public class BaseHttpService
     {
         protected IClient _client;
-        public BaseHttpService(IClient client)
+        protected readonly ILocalStorageService _localStorage;
+
+        public BaseHttpService(IClient client,ILocalStorageService localStorage)
         {
             _client = client;
+            _localStorage = localStorage;
         }
+
+       
         protected Response<Guid> ConvertApiExceptions<Guid>(ApiException ex)
         {
             if (ex.StatusCode == 400)

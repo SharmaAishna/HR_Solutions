@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HrLeaveManagement.Server.Models.Identity
+namespace HRLeaveManagementApplication.Models.Identity
 {
     public class RegistrationRequest
     {

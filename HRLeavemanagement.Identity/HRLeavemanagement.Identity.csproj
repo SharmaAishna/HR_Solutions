@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HrLeaveManagement.Server\HrLeaveManagement.Server\HrLeaveManagement.Server.csproj" />
+    <ProjectReference Include="..\HRLeaveManagementApplication\HRLeaveManagementApplication.csproj" />
   </ItemGroup>
 
 </Project>

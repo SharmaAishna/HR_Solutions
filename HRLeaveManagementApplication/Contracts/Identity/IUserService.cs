@@ -1,6 +1,6 @@
-﻿using HrLeaveManagement.Server.Models.Identity;
+﻿using HRLeaveManagementApplication.Models.Identity;
 
-namespace HrLeaveManagement.Server.Contracts.Identity
+namespace HRLeaveManagementApplication.Contracts.Identity
 {
     public interface IUserService
     {

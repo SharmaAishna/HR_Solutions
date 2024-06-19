@@ -19,7 +19,7 @@ namespace HRLeavemanagement.Identity.Configurations
                 new ApplicationUser
             {
                 Id = "8e445865-a24d-4543-a6c6-9443d048cdb9",
-                Email="admin@live.com",
+                Email="admin@localhost.com",
                 NormalizedEmail="ADMIN@LOCALHOST.COM",
                 FirstName="System",
                 LastName="Admin",
@@ -31,7 +31,7 @@ namespace HRLeavemanagement.Identity.Configurations
                  new ApplicationUser
                  {
                      Id = "9e224968-33e4-4652,b7b7-8574d048cdb9",
-                     Email = "user@live.com",
+                     Email = "user@localhost.com",
                      NormalizedEmail = "USER@LOCALHOST.COM",
                      FirstName = "System",
                      LastName = "User",

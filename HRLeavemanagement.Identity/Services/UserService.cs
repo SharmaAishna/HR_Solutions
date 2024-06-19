@@ -1,12 +1,8 @@
-﻿using HrLeaveManagement.Server.Contracts.Identity;
-using HrLeaveManagement.Server.Models.Identity;
-using HRLeavemanagement.Identity.Models;
+﻿using HRLeavemanagement.Identity.Models;
+using HRLeaveManagementApplication.Contracts.Identity;
+using HRLeaveManagementApplication.Models.Identity;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace HRLeavemanagement.Identity.Services
 {

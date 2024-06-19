@@ -1,19 +1,15 @@
-﻿using HrLeaveManagement.Server.Contracts.Identity;
-using HrLeaveManagement.Server.Models.Identity;
-using HRLeavemanagement.Identity.DbContext;
+﻿using HRLeavemanagement.Identity.DbContext;
 using HRLeavemanagement.Identity.Models;
 using HRLeavemanagement.Identity.Services;
+using HRLeaveManagementApplication.Contracts.Identity;
+using HRLeaveManagementApplication.Models.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace HRLeavemanagement.Identity
 {
@@ -28,13 +24,16 @@ namespace HRLeavemanagement.Identity
             services.AddDbContext<HrLeaveManagementIdentityDbContext>(options =>
 
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            
             //Add Identity Libraray
             services.AddIdentity<ApplicationUser, IdentityRole>()
             .AddEntityFrameworkStores<HrLeaveManagementIdentityDbContext>()
             .AddDefaultTokenProviders();
+
             //Add services ,new instances everytime services are called
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IUserService, UserService>();
+
             //Add Authentication ,strongly typed Jwt Bearer
             services.AddAuthentication(options =>
             {
@@ -53,7 +52,8 @@ namespace HRLeavemanagement.Identity
                         ClockSkew = TimeSpan.Zero,
                         ValidIssuer = configuration["JwtSettings:Issuer"],
                         ValidAudience = configuration["JwtSettings:Audience"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtSettings:Key"]))
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes
+                        (configuration["JwtSettings:Key"]))
 
                     };
 

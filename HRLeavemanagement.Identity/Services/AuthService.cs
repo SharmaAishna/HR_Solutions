@@ -1,17 +1,13 @@
-﻿using HrLeaveManagement.Server.Contracts.Identity;
-using HrLeaveManagement.Server.Exceptions;
-using HrLeaveManagement.Server.Models.Identity;
-using HRLeavemanagement.Identity.Models;
+﻿using HRLeavemanagement.Identity.Models;
+using HRLeaveManagementApplication.Contracts.Identity;
+using HRLeaveManagementApplication.Exceptions;
+using HRLeaveManagementApplication.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace HRLeavemanagement.Identity.Services
 {
@@ -29,6 +25,7 @@ namespace HRLeavemanagement.Identity.Services
             _jwtSettings = jwtSettings.Value;
             _signInManager = signInManager;
         }
+
         public async Task<AuthResponse> Login(AuthRequest request)
         {
             var user = await _userManager.FindByEmailAsync(request.Email);
@@ -42,6 +39,7 @@ namespace HRLeavemanagement.Identity.Services
             {
                 throw new BadRequestException($"Credentials for '{request.Email} aren't valid.'");
             }
+
             JwtSecurityToken jwtSecurityToken = await GenerateToken(user);
 
             var response = new AuthResponse

@@ -1,5 +1,5 @@
-﻿using HrLeaveManagement.Server.Contracts.Identity;
-using HrLeaveManagement.Server.Models.Identity;
+﻿using HRLeaveManagementApplication.Contracts.Identity;
+using HRLeaveManagementApplication.Models.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRLeaveManagementAPI.Controllers
