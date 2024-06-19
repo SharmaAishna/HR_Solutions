@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HrLeaveManagement.Server.Client.Models.LeaveTypes
+namespace HrLeaveManagement.Server.Client.ViewModels.LeaveTypes
 {
     public class LeaveTypeVM
     {
         public int Id { get; set; }
+
         [Required]
         public string Name { get; set; }
 

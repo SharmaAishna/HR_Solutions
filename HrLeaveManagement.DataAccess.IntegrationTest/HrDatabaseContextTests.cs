@@ -13,10 +13,11 @@ namespace HrLeaveManagement.DataAccess.IntegrationTest
         {
             var dbOptions = new DbContextOptionsBuilder<HrDatabaseContext>()
                 .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options;
+          
             _hrDatabaseContext = new HrDatabaseContext(dbOptions);
         }
         [Fact]
-        public async void Save_SetDateCreatedValue()
+        public async Task Save_SetDateCreatedValue()
         {
             //Arrange
             var leaveType = new LeaveType
@@ -34,7 +35,7 @@ namespace HrLeaveManagement.DataAccess.IntegrationTest
             leaveType.DateCreated.ShouldNotBeNull();
         }
         [Fact]
-        public async void Save_SetDateModifiedValue()
+        public async Task Save_SetDateModifiedValue()
         {
             var leaveType = new LeaveType
             {

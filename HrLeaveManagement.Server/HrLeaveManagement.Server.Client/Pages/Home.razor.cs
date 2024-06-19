@@ -1,6 +1,6 @@
 
 using HrLeaveManagement.Server.Client.Contracts;
-using HrLeaveManagement.Server.Client.Models.LeaveTypes;
+using HrLeaveManagement.Server.Client.ViewModels.LeaveTypes;
 using Microsoft.AspNetCore.Components;
 
 namespace HrLeaveManagement.Server.Client.Pages

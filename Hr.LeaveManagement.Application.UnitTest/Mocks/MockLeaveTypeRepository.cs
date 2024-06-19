@@ -34,6 +34,7 @@ namespace Hr.LeaveManagement.Application.UnitTest.Mocks
                     Name="Test Maternity"
                 }
             };
+
             var mockRepo = new Mock<ILeaveTypeRepository>();
             mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(leaveTypes);
 
