@@ -1,71 +1,18 @@
 ﻿@page "/"
 
 <PageTitle>Leave Management</PageTitle>
+<h1 class=" text-center"> Welcome to Hr Leave Management System </h1>
+<br />
+<br />
 
-<h1>Leave Types</h1>
+<AuthorizeView>
+    <Authorized>
+        <button class="btn btn-danger" @onclick="Logout">Logout</button>
+    </Authorized>
+    <NotAuthorized>
+        <button class="btn-link btn-success" @onclick="GoToLogin">Login</button>
+        <button class="btn-link btn-primary" @onclick="GoToRegister">Register</button>
 
-<div class="m-2 d-flex justify-content-end">
-    <button @onclick="CreateLeaveType" class="btn btn-success">Add Leave Type</button>
-</div>
-
-@if (string.IsNullOrEmpty(Message) == false)
-{
-    <div class="alert alert-danger">
-        @Message
-    </div>
-}
-
-@if (LeaveTypes == null)
-{
-    <p>Loading Data...</p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Id
-                </th>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Default Days
-                </th>
-                <th>
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var leaveType in LeaveTypes)
-            {
-                <tr>
-                    <td>@leaveType.Id</td>
-                    <td>@leaveType.Name</td>
-                    <td>@leaveType.DefaultDays</td>
-                    <td>
-                        <button @onclick=@(()=>AllocateLeaveType(leaveType.Id))
-                                class="btn btn-dark">
-                            Allocate Leave
-                        </button>
-                        <button @onclick=@(()=>EditLeaveType(leaveType.Id))
-                                class="btn btn-warning">
-                            Edit
-                        </button>
-                        <button @onclick=@(()=>DetailsLeaveType(leaveType.Id))
-                                class="btn btn-info">
-                            Details
-                        </button>
-                        <button @onclick=@(()=>DeleteLeaveType(leaveType.Id))
-                                class="btn btn-danger">
-                            Delete
-                        </button>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+    </NotAuthorized>
+</AuthorizeView>
 

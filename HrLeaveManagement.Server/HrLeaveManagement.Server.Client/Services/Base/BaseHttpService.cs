@@ -1,4 +1,5 @@
 ﻿using Blazored.LocalStorage;
+using System.Net.Http.Headers;
 
 namespace HrLeaveManagement.Server.Client.Services.Base
 {
@@ -42,7 +43,13 @@ namespace HrLeaveManagement.Server.Client.Services.Base
                 };
             }
         }
-        
+        protected async Task AddBearerToken()
+        {
+            if(await _localStorage.ContainKeyAsync("token"))
+                _client.HttpClient.DefaultRequestHeaders.Authorization=
+                    new AuthenticationHeaderValue("Bearer", await
+                    _localStorage.GetItemAsync<string>("token"));
+        }
     }
 
 }

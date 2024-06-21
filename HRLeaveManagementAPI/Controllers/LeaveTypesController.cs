@@ -4,6 +4,7 @@ using HrLeaveManagement.Server.Features.LeaveTypes.Commands.UpdateLeaveType;
 using HrLeaveManagement.Server.Features.LeaveTypes.Queries.GetAllLeaveTypes;
 using HrLeaveManagement.Server.Features.LeaveTypes.Queries.GetLeaveTypeDetails;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,6 +13,7 @@ namespace HRLeaveManagementAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class LeaveTypesController : ControllerBase
     {
         private readonly IMediator _mediator;

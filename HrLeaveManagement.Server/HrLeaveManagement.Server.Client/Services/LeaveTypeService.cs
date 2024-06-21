@@ -2,6 +2,7 @@
 using HrLeaveManagement.Server.Client.Contracts;
 using HrLeaveManagement.Server.Client.ViewModels.LeaveTypes;
 using HrLeaveManagement.Server.Client.Services.Base;
+using Blazored.LocalStorage;
 
 namespace HrLeaveManagement.Server.Client.Services
 {
@@ -9,7 +10,7 @@ namespace HrLeaveManagement.Server.Client.Services
     {
         private readonly IMapper _mapper;
 
-        public LeaveTypeService(IClient client, IMapper mapper) : base(client)
+        public LeaveTypeService(IClient client, IMapper mapper,ILocalStorageService localStorageService) : base(client, localStorageService)
         {
             _mapper = mapper;
         }
@@ -18,6 +19,7 @@ namespace HrLeaveManagement.Server.Client.Services
         {
             try
             {
+                await AddBearerToken();
                 var createLeaveTypeCommand = _mapper.Map<CreateLeaveTypeCommand>(leaveType);
                 await _client.LeaveTypesPOSTAsync(createLeaveTypeCommand);
                 return new Response<Guid>()
@@ -35,6 +37,7 @@ namespace HrLeaveManagement.Server.Client.Services
         {
             try
             {
+                await AddBearerToken();
                 await _client.LeaveTypesDELETEAsync(id);
                 return new Response<Guid>()
                 {
@@ -49,12 +52,14 @@ namespace HrLeaveManagement.Server.Client.Services
 
         public async Task<LeaveTypeVM> GetLeaveTypeDetails(int id)
         {
+            await AddBearerToken();
             var leaveType = await _client.LeaveTypesGETAsync(id);
             return _mapper.Map<LeaveTypeVM>(leaveType);
         }
 
         public async Task<List<LeaveTypeVM>> GetLeaveTypes()
         {
+            await AddBearerToken();
             var leaveTypes = await _client.LeaveTypesAllAsync();
             return _mapper.Map<List<LeaveTypeVM>>(leaveTypes);
         }
@@ -63,6 +68,7 @@ namespace HrLeaveManagement.Server.Client.Services
         {
             try
             {
+                await AddBearerToken();
                 var UpdateLeaveTypeCommand = _mapper.Map<UpdateLeaveTypeCommand>(leaveType);
                 await _client.LeaveTypesPUTAsync(id.ToString() ,UpdateLeaveTypeCommand);
                 return new Response<Guid>()

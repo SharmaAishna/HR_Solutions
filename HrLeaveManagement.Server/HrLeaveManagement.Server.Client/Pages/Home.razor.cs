@@ -1,52 +1,38 @@
 
 using HrLeaveManagement.Server.Client.Contracts;
+using HrLeaveManagement.Server.Client.Providers;
 using HrLeaveManagement.Server.Client.ViewModels.LeaveTypes;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
+using System.Runtime.CompilerServices;
 
 namespace HrLeaveManagement.Server.Client.Pages
 {
     public partial class Home
     {
         [Inject]
-        public NavigationManager NavigationManager { get; set; }
+        private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [Inject]
-        public ILeaveTypeService LeaveTypeService { get; set; } 
-        public string Message { get; set; } = string.Empty;
-        public List<LeaveTypeVM> LeaveTypes { get; private set; } 
-        protected void CreateLeaveType()
+        private IAuthenticationService AuthenticationService { get; set; }
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
+       
+        protected async override Task OnInitializedAsync()
         {
-            NavigationManager.NavigateTo("/leavetypes/create/");
+            await((ApiAuthenticationStateProvider)
+                AuthenticationStateProvider).GetAuthenticationStateAsync();
         }
-        protected void AllocateLeaveType(int id)
+        protected void GoToLogin()
         {
-            //Use Leave Allocation Service
+            NavigationManager.NavigateTo("login/");
         }
-        protected void DetailsLeaveType(int id)
+        protected void GoToRegister()
         {
-            NavigationManager.NavigateTo($"/leavetypes/details/{id}");
+            NavigationManager.NavigateTo("register/");
         }
-        protected async Task DeleteLeaveType(int id)
+        protected async void Logout()
         {
-            var response = await LeaveTypeService.DeleteLeaveType(id);
-            if (response.Success)
-            {
-                StateHasChanged();
-            }
-            else
-            {
-                Message = response.Message;
-            }
-        }
-        protected void EditLeaveType(int id)
-        {
-            NavigationManager.NavigateTo($"/leavetypes/edit/{id}");
-        }
-
-        protected override async Task OnInitializedAsync()
-        {
-            StateHasChanged();
-            LeaveTypes = await LeaveTypeService.GetLeaveTypes();
-            StateHasChanged();
+            await AuthenticationService.Logout();
         }
     }
 }
