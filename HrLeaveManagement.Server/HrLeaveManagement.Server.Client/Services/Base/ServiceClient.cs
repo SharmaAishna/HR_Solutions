@@ -2066,22 +2066,12 @@ namespace HrLeaveManagement.Server.Client.Services.Base
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.4.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class AuthRequest
     {
-        [System.Text.Json.Serialization.JsonConstructor]
-
-        public AuthRequest(string @email, string @password)
-
-        {
-
-            this.Email = @email;
-
-            this.Password = @password;
-
-        }
+       
         [System.Text.Json.Serialization.JsonPropertyName("email")]
-        public string Email { get; }
+        public string Email { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("password")]
-        public string Password { get; }
+        public string Password { get; set; }
 
     }
 
@@ -2526,44 +2516,28 @@ namespace HrLeaveManagement.Server.Client.Services.Base
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.4.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class RegistrationRequest
     {
-        [System.Text.Json.Serialization.JsonConstructor]
-
-        public RegistrationRequest(string @email, string @firstName, string @lastName, string @password, string @userName)
-
-        {
-
-            this.FirstName = @firstName;
-
-            this.LastName = @lastName;
-
-            this.Email = @email;
-
-            this.UserName = @userName;
-
-            this.Password = @password;
-
-        }
+               
         [System.Text.Json.Serialization.JsonPropertyName("firstName")]
         [System.ComponentModel.DataAnnotations.Required]
-        public string FirstName { get; }
+        public string FirstName { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("lastName")]
         [System.ComponentModel.DataAnnotations.Required]
-        public string LastName { get; }
+        public string LastName { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("email")]
         [System.ComponentModel.DataAnnotations.Required]
-        public string Email { get; }
+        public string Email { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("userName")]
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 6)]
-        public string UserName { get; }
+        public string UserName { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("password")]
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 6)]
-        public string Password { get; }
+        public string Password { get; set; }
 
     }
 

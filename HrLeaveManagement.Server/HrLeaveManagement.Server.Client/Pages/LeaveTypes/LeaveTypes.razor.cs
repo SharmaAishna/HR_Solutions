@@ -11,7 +11,7 @@ namespace HrLeaveManagement.Server.Client.Pages.LeaveTypes
         [Inject]
         public ILeaveTypeService LeaveTypeService { get; set; }
         public string Message { get; set; } = string.Empty;
-        public List<LeaveTypeVM> LeaveTypeVM { get; private set; }
+        public List<LeaveTypeVM> LeaveTypesVM { get; private set; }
         protected void CreateLeaveType()
         {
             NavigationManager.NavigateTo("/leavetypes/create/");
@@ -44,7 +44,7 @@ namespace HrLeaveManagement.Server.Client.Pages.LeaveTypes
         protected override async Task OnInitializedAsync()
         {
             StateHasChanged();
-            LeaveTypeVM = await LeaveTypeService.GetLeaveTypes();
+            LeaveTypesVM = await LeaveTypeService.GetLeaveTypes();
             StateHasChanged();
         }
     }

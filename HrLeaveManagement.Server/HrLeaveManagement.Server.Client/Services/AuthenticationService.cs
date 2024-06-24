@@ -62,6 +62,8 @@ namespace HrLeaveManagement.Server.Client.Services
             {
                 FirstName = firstName,
                 LastName= lastName,
+                
+                
                 UserName=userName,
                 Email = email,
                 Password = password
